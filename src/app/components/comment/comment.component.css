@@ -1,0 +1,19 @@
+.post-item,
+.comment-item {
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+}
+
+.post-item h2,
+.post-item p,
+.comment-item h2,
+.comment-item p {
+  margin: 0.5rem 0;
+}
+
+.post-item h2,
+.comment-item h2 {
+  font-size: 1.5rem;
+  color: #414141;
+}

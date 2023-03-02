@@ -1,0 +1,33 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="main">
+  <section id="available-posts">
+    <input
+      type="text"
+      name="user_id"
+      id="user_id"
+      maxlength="2"
+      min="1"
+      max="10"
+      step="1"
+      placeholder="Enter user id (from 1-10)"
+      pattern="[0-9]{2}"
+      [(ngModel)]="userId"
+    />
+    <button id="fetch" (click)="showPosts()">SHOW POSTS</button>
+
+    <!-- <div class="posts" *ngIf="posts$">
+      <app-post *ngFor="let post of posts$ | async" [post]="post"></app-post>
+      async(pipe) автоматически подпишется на стрим posts$ и выведет данные как только они придут
+    </div> -->
+        
+    <div class="posts" *ngIf="posts">
+      <app-post *ngFor="let post of posts" [post]="post"></app-post>
+    </div>
+  </section>
+</div>

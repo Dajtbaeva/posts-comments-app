@@ -1,0 +1,22 @@
+<div id="single-post">
+  <li class="post-item">
+    <h2>{{ post.title | uppercase }}</h2>
+    <p>{{ post.body }}</p>
+    <button
+      [ngClass]="{
+        hide: !getComments,
+        show: getComments
+      }"
+      (click)="getComments = !getComments"
+    >
+      {{ getComments ? "Hide" : "Show" }} comments
+    </button>
+    <ul class="comments"></ul>
+    <div *ngIf="getComments">
+      <app-comment
+        *ngFor="let comment of comments"
+        [comment]="comment"
+      ></app-comment>
+    </div>
+  </li>
+</div>
